@@ -1,7 +1,8 @@
 # Byte-compiled / optimized / DLL files
 
 .vscode
-
+sentimentAnalyzeServer/node_modules
+sentimentAnalyzeClient/node_modules
 __pycache__/
 *.py[cod]
 *$py.class
