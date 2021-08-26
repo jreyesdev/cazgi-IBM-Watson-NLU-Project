@@ -34,7 +34,7 @@ class App extends React.Component {
 
   sendForSentimentAnalysis = () => {
     this.setState({sentiment:true});
-    let url = ".";
+    let url = 'http://localhost:8080';
 
     if(this.state.mode === "url") {
       url = url+"/url/sentiment?url="+document.getElementById("textinput").value;
@@ -50,7 +50,7 @@ class App extends React.Component {
         } else if (data === "negative"){
           output = <div style={{color:"red",fontSize:20}}>{data}</div>
         } else {
-          output = <div style={{color:"orange",fontSize:20}}>{data}</div>
+          output = <div style={{color:"yellow",fontSize:20}}>{data}</div>
         }
         this.setState({sentimentOutput:output});
       })});
@@ -59,11 +59,11 @@ class App extends React.Component {
   sendForEmotionAnalysis = () => {
 
     this.setState({sentiment:false});
-    let url = ".";
+    let url = 'http://localhost:8080';
     if(this.state.mode === "url") {
       url = url+"/url/emotion?url="+document.getElementById("textinput").value;
     } else {
-      url = url+"/text/emotion/?text="+document.getElementById("textinput").value;
+      url = url+"/text/emotion?text="+document.getElementById("textinput").value;
     }
     fetch(url).then((response)=>{
       response.json().then((data)=>{
