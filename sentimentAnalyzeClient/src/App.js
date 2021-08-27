@@ -34,7 +34,7 @@ class App extends React.Component {
 
   sendForSentimentAnalysis = () => {
     this.setState({sentiment:true});
-    let url = 'http://localhost:8080';
+    let url = '';
 
     if(this.state.mode === "url") {
       url = url+"/url/sentiment?url="+document.getElementById("textinput").value;
@@ -59,7 +59,7 @@ class App extends React.Component {
   sendForEmotionAnalysis = () => {
 
     this.setState({sentiment:false});
-    let url = 'http://localhost:8080';
+    let url = '';
     if(this.state.mode === "url") {
       url = url+"/url/emotion?url="+document.getElementById("textinput").value;
     } else {
